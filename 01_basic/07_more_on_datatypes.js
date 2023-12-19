@@ -35,3 +35,33 @@ const myFunction = function(){
 console.log(typeof anotherId);
 
 // https://262.ecma-international.org/5.1/#sec-11.4.3
+
+
+
+// -----------------------------------------------------------------------
+
+// Stack and Heap memory in JavaScript
+
+// stack used in primitive datatypes | Heap used in non-primitive datatype
+
+let myName = "sam roy";
+
+let anotherName = myName;
+
+anotherName = "ram";
+
+console.log(myName);
+console.log(anotherName); 
+
+
+let user1 = {
+    name: 'sam',
+    role: 'web developer'
+};
+
+let user2 = user1;
+
+user2.role = 'programmer';
+
+console.log(user1);
+console.log(user2);
