@@ -62,7 +62,36 @@ console.log(tinderUser);
 
 
 
+// ----------Object de-structure----------
 
+const course = {
+    coursename: "python",
+    price: "999",
+    courseInstructor: "sam"
+}
+
+// course.courseInstructor
+
+// const {courseInstructor} = course
+// console.log(courseInstructor);
+
+const {courseInstructor: instructor} = course
+console.log(instructor);
+
+
+// JSON Stracture 
+
+// {
+//     "name": "sam",
+//     "coursename": "js in hindi",
+//     "price": "free"
+// }
+
+[
+    {},
+    {},
+    {}
+]
 
 
 
