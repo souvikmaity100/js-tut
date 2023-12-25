@@ -13,3 +13,8 @@ const otherNumber = 123.8966
 
 const hundreds = 1000000
 // console.log(hundreds.toLocaleString('en-IN'));
+
+
+// console.log(Number.MAX_VALUE);
+// console.log(Number.MIN_VALUE);
+// console.log(Number.MAX_SAFE_INTEGER);
