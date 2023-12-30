@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classname_classlist</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        .yellow {
+            background-color: yellow;
+            color: white;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .text-dark {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="first" class="yellow text-dark">
+        <span>Hey I am good</span>
+    </div>
+
+
+    <script>
+        first.className = "text-black red"
+        //     first.classList.add("red")
+        // first.classList.remove("red")
+        console.log(first.classList.contains("red")); // return true or false
+        //     first.classList.toggle("red")
+    </script>
+</body>
+
+</html>

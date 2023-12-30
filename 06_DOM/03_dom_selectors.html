@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulating DOM</title>
+</head>
+<body>
+    <div id="main" class="container">
+        <!-- hello -->
+        <ul id="nav">
+            <li>Home</li>
+            <li>About Us</li>
+            <li>Services</li>
+            <li>Contact Us</li>
+        </ul>
+    </div>
+    <div class="container">
+        Another container
+    </div>
+    <script>
+        // ------get children in js------
+        console.log(document.body.firstChild) // blank space js take as a text
+        console.log(document.body.firstElementChild) // only return element
+        console.log(document.body.firstElementChild.firstElementChild) 
+        
+        console.log(document.body.lastChild)
+        // childNodes - direct children like body is the direct children of html
+        let arr = Array.from(document.body.childNodes)
+        console.log(arr)
+
+        // -------get parent in js-------
+        console.log(document.body.firstChild)
+        a = document.body
+        console.log(a.parentElement)
+        console.log(a.parentNode)
+
+
+        let mai = document.getElementById('main');
+        let nav = document.getElementById('nav');
+        console.log(mai);
+        console.log(nav);
+        let con = document.getElementsByClassName('container');
+        console.log(con);
+        let sel = document.querySelector('.container');
+        console.log('Selector rturn', sel);
+
+        // let na = document.querySelector('#nav>li');
+        // console.log('Selector rturn', na);
+
+        let na = document.querySelectorAll('#nav>li');
+        console.log('Selector rturn', na);
+        
+    </script>
+</body>
+</html>
