@@ -1,4 +1,3 @@
-
 let randomNumber = parseInt(Math.random() * 100 + 1);
 
 const submit = document.querySelector('#subt');
@@ -10,19 +9,20 @@ const startOver = document.querySelector('.resultParas');
 
 const p = document.createElement('p');
 
-let prevGuess = [];
 let numGuess = 1;
 
 let playGame = true;
-
-if (playGame) {
+function start() {
   submit.addEventListener('click', function (e) {
     e.preventDefault();
-    const guess = parseInt(userInput.value);
-    console.log(guess);
-    validateGuess(guess);
+    if (playGame) {
+      const guess = parseInt(userInput.value);
+      console.log(guess);
+      validateGuess(guess);
+    }
   });
 }
+start();
 
 function validateGuess(guess) {
   if (isNaN(guess)) {
@@ -32,8 +32,7 @@ function validateGuess(guess) {
   } else if (guess > 100) {
     alert('PLease enter a  number less than 100');
   } else {
-    prevGuess.push(guess);
-    if (numGuess === 11) {
+    if (numGuess === 10) {
       displayGuess(guess);
       displayMessage(`Game Over. Random number was ${randomNumber}`);
       endGame();
@@ -58,8 +57,8 @@ function checkGuess(guess) {
 function displayGuess(guess) {
   userInput.value = '';
   guessSlot.innerHTML += `${guess}, `;
+  remaining.innerHTML = `${10 - numGuess} `;
   numGuess++;
-  remaining.innerHTML = `${11 - numGuess} `;
 }
 
 function displayMessage(message) {
@@ -67,7 +66,6 @@ function displayMessage(message) {
 }
 
 function endGame() {
-  userInput.value = '';
   userInput.setAttribute('disabled', '');
   p.classList.add('button');
   p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;
@@ -77,10 +75,10 @@ function endGame() {
 }
 
 function newGame() {
+  start();
   const newGameButton = document.querySelector('#newGame');
   newGameButton.addEventListener('click', function (e) {
     randomNumber = parseInt(Math.random() * 100 + 1);
-    prevGuess = [];
     numGuess = 1;
     guessSlot.innerHTML = '';
     remaining.innerHTML = `${11 - numGuess} `;
@@ -88,6 +86,6 @@ function newGame() {
     startOver.removeChild(p);
 
     playGame = true;
+    start();
   });
 }
-
