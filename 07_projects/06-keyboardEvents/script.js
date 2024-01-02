@@ -1,6 +1,8 @@
 const insert = document.getElementById('insert');
 
 window.addEventListener('keydown', (e) => {
+  e.preventDefault();
+  // The preventDefault() method cancels the event if it is cancelable, meaning that the default action that belongs to the event will not occur.
   insert.innerHTML = `
     <div class='color'>
     <table>
